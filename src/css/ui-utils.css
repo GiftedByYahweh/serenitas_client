@@ -1,0 +1,71 @@
+.w-full {
+    width: 100%;
+}
+.m-0 {
+    margin: 0;
+}
+.pointer {
+    cursor: pointer;
+}
+
+/* ====== Flex Utilities ====== */
+.flex {
+    display: flex;
+}
+.row {
+    flex-direction: row;
+}
+.col {
+    flex-direction: column;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+.j-center {
+    justify-content: center;
+}
+.j-between {
+    justify-content: space-between;
+}
+.j-around {
+    justify-content: space-around;
+}
+.j-end {
+    justify-content: flex-end;
+}
+.i-center {
+    align-items: center;
+}
+.i-start {
+    align-items: flex-start;
+}
+.i-end {
+    align-items: flex-end;
+}
+
+/* ====== Gap Utilities ====== */
+.g-2 {
+    gap: 2px;
+}
+.g-4 {
+    gap: 4px;
+}
+.g-8 {
+    gap: 8px;
+}
+.g-12 {
+    gap: 12px;
+}
+.g-20 {
+    gap: 20px;
+}
+.g-24 {
+    gap: 24px;
+}
+.g-32 {
+    gap: 32px;
+}

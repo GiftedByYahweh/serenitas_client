@@ -1,10 +1,20 @@
 <script setup>
-import { NButton, NSpace, NDatePicker } from "naive-ui";
+import { ApplicationLayout } from "./layouts/application";
+import { useUISettingsStore } from "./stores/uiSettings";
+import { darkTheme, lightTheme } from "naive-ui";
+
+const uiSettingsStore = useUISettingsStore();
+
+const themeList = {
+  dark: darkTheme,
+  light: lightTheme,
+};
 </script>
 
 <template>
-  <n-space vertical>
-    <n-button type="primary">Primary Button</n-button>
-    <n-date-picker type="date" />
-  </n-space>
+  <n-config-provider :theme="themeList[uiSettingsStore.theme]">
+    <ApplicationLayout />
+  </n-config-provider>
 </template>
+
+<style></style>
