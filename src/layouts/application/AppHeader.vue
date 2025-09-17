@@ -6,7 +6,7 @@ import ThemeSwitcher from "../../modules/common/ThemeSwitcher.vue";
 <template>
   <n-layout-header bordered class="header flex g-24 j-end">
     <ThemeSwitcher />
-    <n-icon class="pointer" :size="30" color="#949494">
+    <n-icon class="pointer" :size="30">
       <LogOutOutline />
     </n-icon>
   </n-layout-header>

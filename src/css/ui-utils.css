@@ -1,9 +1,6 @@
 .w-full {
     width: 100%;
 }
-.m-0 {
-    margin: 0;
-}
 .pointer {
     cursor: pointer;
 }
@@ -68,4 +65,12 @@
 }
 .g-32 {
     gap: 32px;
+}
+
+/* ====== Margin Utilities ====== */
+.m-0 {
+    margin: 0;
+}
+.m-b-10 {
+    margin-bottom: 10px;
 }

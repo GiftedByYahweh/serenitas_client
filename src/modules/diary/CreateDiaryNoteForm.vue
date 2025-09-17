@@ -1,9 +1,10 @@
 <script setup>
+import { HelpCircleOutline } from "@vicons/ionicons5";
 import { computed, ref } from "vue";
 
 const title = ref("");
 const content = ref("");
-const isPrivate = ref(false);
+const isPrivate = ref(true);
 
 const isDisabled = computed(() => {
   return !title.value || !content.value;
@@ -13,12 +14,13 @@ const isDisabled = computed(() => {
 <template>
   <n-card>
     <n-form class="create-form">
+      <n-h2 class="title m-b-10">Write new note</n-h2>
       <div>
-        <n-h3 class="inp-title">Note title</n-h3>
+        <n-h3 class="m-b-10">Note title</n-h3>
         <n-input v-model:value="title" placeholder="Note title" maxlength="100" show-count size="large"></n-input>
       </div>
       <div>
-        <n-h3 class="inp-title">Content</n-h3>
+        <n-h3 class="m-b-10">Content</n-h3>
         <n-input
           type="textarea"
           placeholder="Write your minds"
@@ -44,10 +46,11 @@ const isDisabled = computed(() => {
   flex-direction: column;
   gap: 12px;
 }
-.inp-title {
-  margin-bottom: 10px;
-}
 .textarea {
   min-height: 300px;
+}
+.title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b4b4b4;
 }
 </style>
