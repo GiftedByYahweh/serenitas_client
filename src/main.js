@@ -1,4 +1,4 @@
-import "./style.css";
+import "./css/reset.css";
 import "./css/ui-utils.css";
 import App from "./App.vue";
 import naive from "naive-ui";

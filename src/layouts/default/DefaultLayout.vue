@@ -1,9 +1,7 @@
-<script setup>
-import AuthModule from "../../modules/auth/AuthModule.vue";
-</script>
+<script setup></script>
 
 <template>
   <n-layout content-style="display: flex; justify-content: center; height: 100vh; align-items: center">
-    <AuthModule />
+    <router-view />
   </n-layout>
 </template>

@@ -1,6 +1,9 @@
 .w-full {
     width: 100%;
 }
+.w-fit {
+    width: fit-content;
+}
 .pointer {
     cursor: pointer;
 }

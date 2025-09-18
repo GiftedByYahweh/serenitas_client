@@ -5,7 +5,7 @@ export const useUISettingsStore = defineStore("uiSettings", () => {
   const THEME_LS_NAME = "lfjssdfjerdfas";
   const SIDEBAR_COLLAPSED = "knasdfsdfahfskfkb";
 
-  const currentTheme = localStorage.getItem(THEME_LS_NAME) === "dark" ? "dark" : "light";
+  const currentTheme = localStorage.getItem(THEME_LS_NAME) === "light" ? "light" : "dark";
   const currentSidebar = localStorage.getItem(SIDEBAR_COLLAPSED) === "true" ? true : false;
 
   const theme = ref(currentTheme);

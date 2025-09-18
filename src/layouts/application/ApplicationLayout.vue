@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { DiaryPage } from "../../modules/diary";
 import AppHeader from "./AppHeader.vue";
 import AppSidebar from "./AppSidebar.vue";
 </script>
@@ -10,7 +9,7 @@ import AppSidebar from "./AppSidebar.vue";
     <n-layout>
       <AppHeader />
       <n-layout-content content-style="padding: 24px;">
-        <DiaryPage />
+        <router-view />
       </n-layout-content>
     </n-layout>
   </n-layout>
