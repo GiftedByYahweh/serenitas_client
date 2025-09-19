@@ -1,5 +1,5 @@
 <script setup>
-import { LogOutOutline, PencilOutline } from "@vicons/ionicons5";
+import { LogOutOutline } from "@vicons/ionicons5";
 import ThemeSwitcher from "../../modules/common/ThemeSwitcher.vue";
 </script>
 
@@ -14,9 +14,6 @@ import ThemeSwitcher from "../../modules/common/ThemeSwitcher.vue";
       </template>
       Sign out
     </n-tooltip>
-    <n-icon class="pointer" :size="30">
-      <PencilOutline />
-    </n-icon>
   </n-layout-header>
 </template>
 
