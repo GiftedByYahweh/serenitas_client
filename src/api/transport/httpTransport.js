@@ -7,6 +7,9 @@ export const createTransport = (instance) => ({
     const payload = JSON.stringify(data);
     const response = await instance(url, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: payload,
     });
     return response.json();
@@ -15,6 +18,9 @@ export const createTransport = (instance) => ({
     const payload = JSON.stringify(data);
     const response = await instance(url, {
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: payload,
     });
     return response.json();

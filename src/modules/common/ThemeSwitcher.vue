@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useUISettingsStore } from "../../stores/uiSettings";
-import { SunnyOutline, Moon } from "@vicons/ionicons5";
+import { SunnyOutline, MoonOutline } from "@vicons/ionicons5";
 
 const uiSettingsStore = useUISettingsStore();
 
@@ -13,7 +13,7 @@ const isThemeDark = computed(() => uiSettingsStore.theme === "dark");
     <n-tooltip trigger="hover">
       <template #trigger>
         <n-icon class="pointer" :size="30" v-if="isThemeDark" @click="uiSettingsStore.switchTheme">
-          <Moon />
+          <MoonOutline />
         </n-icon>
         <n-icon class="pointer" :size="30" v-else @click="uiSettingsStore.switchTheme">
           <SunnyOutline />

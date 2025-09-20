@@ -23,8 +23,10 @@ const currentLayout = computed(() => {
 
 <template>
   <n-config-provider :theme="themeList[uiSettingsStore.theme]">
-    <component :is="currentLayout">
-      <router-view />
-    </component>
+    <n-message-provider>
+      <component :is="currentLayout">
+        <router-view />
+      </component>
+    </n-message-provider>
   </n-config-provider>
 </template>

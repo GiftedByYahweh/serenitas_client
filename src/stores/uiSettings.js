@@ -17,7 +17,6 @@ export const useUISettingsStore = defineStore("uiSettings", () => {
   };
 
   const toggleSidebar = (state) => {
-    console.log(state);
     sidebarState.value = state;
     localStorage.setItem(SIDEBAR_COLLAPSED, sidebarState.value);
   };

@@ -1,7 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import { RoutePaths, routes } from "./routes";
-
-const isAuth = false;
+import { useAuthStore } from "../stores/auth";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -9,10 +8,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-  if (to.meta.requiresAuth && !isAuth) {
+  const authStore = useAuthStore();
+
+  if (to.meta.requiresAuth && !authStore.isAuth) {
     return { name: RoutePaths.login.name };
   }
-  if (isAuth && (to.name === RoutePaths.login.name || to.name === RoutePaths.registration.name)) {
+  if (authStore.isAuth && (to.name === RoutePaths.login.name || to.name === RoutePaths.registration.name)) {
     return { name: RoutePaths.main.name };
   }
 });

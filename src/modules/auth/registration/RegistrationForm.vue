@@ -1,6 +1,14 @@
 <script setup>
 import { computed, ref } from "vue";
 import { RoutePaths } from "../../../router/routes";
+import { apiClient } from "../../../api";
+import { useMessage } from "naive-ui";
+import { useAuthStore } from "../../../stores/auth";
+import { useRouter } from "vue-router";
+
+const message = useMessage();
+const auth = useAuthStore();
+const router = useRouter();
 
 const username = ref("");
 const email = ref("");
@@ -9,6 +17,16 @@ const password = ref("");
 const isDisabled = computed(() => {
   return !email.value || !password.value || !username.value;
 });
+
+const onRegistration = async () => {
+  const payload = { username: username.value, email: email.value, password: password.value };
+  const res = await apiClient.auth.registration(payload);
+  if (!res.data) {
+    return message.error(res.message);
+  }
+  auth.onLogin();
+  router.push(RoutePaths.main);
+};
 </script>
 
 <template>
@@ -35,11 +53,18 @@ const isDisabled = computed(() => {
       type="password"
       show-password-on="mousedown"
       placeholder="Password"
-      :minlength="6"
+      :minlength="4"
       :maxlength="16"
     />
     <div>
-      <n-button size="large" type="success" class="w-full" attr-type="submit" :disabled="isDisabled">
+      <n-button
+        size="large"
+        type="success"
+        class="w-full"
+        attr-type="submit"
+        :disabled="isDisabled"
+        @click="onRegistration"
+      >
         Sign Up
       </n-button>
       <n-p align="center">
